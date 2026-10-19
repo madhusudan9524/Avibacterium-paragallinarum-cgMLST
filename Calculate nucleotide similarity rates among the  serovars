@@ -1,0 +1,22 @@
+def read(file):
+    seqs = {}
+    for line in open(file):
+        line = line.strip()
+        if line.startswith(">"):
+            name = line[1:].split()[0]
+            seqs[name] = ""
+        else:
+            seqs[name] += line.upper()
+    return seqs
+
+def similarity(a, b):
+    pairs = [(x, y) for x, y in zip(a, b) if x != "-" and y != "-"]
+    return 100 * sum(x == y for x, y in pairs) / len(pairs)
+
+aln = read("aligned.fa")
+refs = list(read("ref_hmtp210.fa"))
+
+print("genome", *refs, sep="\t")
+for genome in aln:
+    if genome not in refs:
+        print(genome, *[f"{similarity(aln[genome], aln[r]):.2f}" for r in refs], sep="\t")
