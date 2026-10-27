@@ -1,4 +1,4 @@
-# Avibacterium paragallinarum cgMLST, cgSNP and serotyping analysis
+# Avibacterium paragallinarum cgMLST and cgSNP analysis
 
 Code and workflows for the genomic analyses in:
 
