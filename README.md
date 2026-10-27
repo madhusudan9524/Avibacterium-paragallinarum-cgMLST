@@ -1,41 +1,37 @@
-# Avibacterium paragallinarum cgMLST and cgSNP analysis
+# Avibacterium paragallinarum cgMLST analysis scripts
 
-Code and workflows for the genomic analyses in:
+Scripts used for the genomic analyses in:
 
-## Overview
-This repository contains the scripts and commands used to:
-1. Check genome quality (QUAST, CheckM) and species identity (FastANI).
-2. Build and evaluate a cgMLST scheme for *A. paragallinarum* (implemented in PubMLST).
-3. Calculate core-genome SNP distances and phylogeny (Snippy, Gubbins, snp-sites, snp-dists, IQ-TREE).
-4. Predict Kume serovars from the HMTp210 gene.
-5. Compare typing methods (cgMLST, six-locus MLST, cgSNP) by discriminatory power (Hunter-Gaston index), concordance (adjusted Rand and Wallace) and Mantel tests.
-6. Generate GrapeTree and iTOL metadata files.
+**Development of a standardized core genome MLST enables high-resolution epidemiological investigation of Avibacterium paragallinarum**
 
-## Repository structure
-- `scripts/`  analysis scripts and Slurm job files
-- `envs/`     conda environment files with software versions
-- `metadata/` isolate lists, PubMLST identifiers, loci removed from the scheme, serotype table
-- `docs/`     step-by-step description of each analysis
+Madhusudan Timilsina1, Amro Hashish2, Mostafa Ghanem1,†
+1Department of Veterinary Medicine, Virginia-Maryland College of Veterinary Medicine, University of Maryland, College Park, USA
+2Department of Veterinary Diagnostic and Production Animal Medicine, College of Veterinary Medicine, Iowa State University, Ames, Iowa, USA
 
-## Software
-QUAST 5.3.0, CheckM [version], FastANI [version], Snippy [version], Gubbins [version],
-snp-sites [version], snp-dists 1.2.0, IQ-TREE 2.4.0, MAFFT [version], GrapeTree [version],
-R (vegan) [version]. Exact versions are in `envs/`.
 
-## Data
-Genome accessions are listed in `metadata/`. Assemblies are not included in this repository.
-The cgMLST scheme is available in PubMLST: [link].
+Scripts
+fastani_ani_clustering.py: Dereplication of genomes by single-linkage clustering at ≥99.9% ANI 
+fastani_matrix_2_upgma_tree.R:  UPGMA tree from pairwise ANI distances (1 − ANI/100)
+mantel_test_cgmlst_vs_cgsnp.R: Mantel test (Spearman, 9,999 permutations) comparing cgMLST allelic distances with cgSNP distances 
+pangenome_heaps_rarefaction.R: Pangenome accumulation curve and Heaps' law estimate of pangenome openness. For Heaps' law, α < 1 indicates an open pangenome and α > 1 a closed pangenome.
 
 ## Usage
-Scripts are listed in the order they were run in `docs/`.
-Example (Hunter-Gaston index):
-`python scripts/hgdi.py profiles.tsv "cgST (cgMLST)"`
+Run each script from the folder containing its input files:
+python3 fastani_ani_clustering.py
+Rscript fastani_matrix_2_upgma_tree.R
+Rscript mantel_test_cgmlst_vs_cgsnp.R
+Rscript pangenome_heaps_rarefaction.R
+
+## Requirements
+- Python 3 with numpy
+- R with the packages ape, vegan and micropan
+- FastANI v1.34  and Panaroo v1.8.0 to generate the input files
 
 ## Citation
-Please cite the paper above if you use this code.
+Please cite the paper above if you use these scripts.
 
 ## License
-MIT (see LICENSE)
+MIT
 
 ## Contact
-Madhusudan Timilsina, University of Maryland, College Park, USA madhutim@umd.edu
+Madhusudan Timilsina, University of Maryland, College Park, USA (madhutim@umd.edu)
