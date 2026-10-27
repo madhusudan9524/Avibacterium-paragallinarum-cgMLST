@@ -9,7 +9,7 @@ Madhusudan Timilsina1, Amro Hashish2, Mostafa Ghanem1,†
 2Department of Veterinary Diagnostic and Production Animal Medicine, College of Veterinary Medicine, Iowa State University, Ames, Iowa, USA
 
 
-Scripts
+## Scripts
 fastani_ani_clustering.py: Dereplication of genomes by single-linkage clustering at ≥99.9% ANI 
 fastani_matrix_2_upgma_tree.R:  UPGMA tree from pairwise ANI distances (1 − ANI/100)
 mantel_test_cgmlst_vs_cgsnp.R: Mantel test (Spearman, 9,999 permutations) comparing cgMLST allelic distances with cgSNP distances 
