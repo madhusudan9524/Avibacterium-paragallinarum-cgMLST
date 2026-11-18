@@ -44,12 +44,6 @@ R with the packages `ape`, `vegan` and `micropan`<br>
 
 ## How to cite
 
-If you use these scripts, please cite both the manuscript and the software itself.
-
-**Manuscript:** Timilsina M, Hashish A, Jolley KA, Ghanem M. *A standardized core genome MLST scheme for Avibacterium paragallinarum traces outbreaks and reveals region-specific lineages.* (citation details to be added upon publication.)
-
-**Software:** See [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata, or use the "Cite this repository" button above the file list. Once archived, a Zenodo DOI for this code will be added here.
-
 ## License
 
 MIT &mdash; see [LICENSE](LICENSE).
