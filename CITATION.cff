@@ -13,9 +13,17 @@ authors:
   - family-names: Hashish
     given-names: Amro
     affiliation: "College of Veterinary Medicine, Iowa State University, Ames, Iowa, USA"
+  - family-names: Jolley
+    given-names: Keith A.
+    affiliation: "Department of Biology, University of Oxford, Oxford, UK"
   - family-names: Ghanem
     given-names: Mostafa
     affiliation: "Virginia-Maryland College of Veterinary Medicine, University of Maryland, College Park, USA"
+    email: mghanem@umd.edu
+contact:
+  - family-names: Ghanem
+    given-names: Mostafa
+    email: mghanem@umd.edu
 keywords:
   - cgMLST
   - Avibacterium paragallinarum
